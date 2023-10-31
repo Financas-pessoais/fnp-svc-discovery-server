@@ -1,0 +1,1 @@
+web: java -jar build/libs/fnp.discoveryserver-0.0.1-SNAPSHOT.jar
