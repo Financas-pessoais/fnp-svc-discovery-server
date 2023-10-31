@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar -jar build/libs/discoveryserver-0.0.1-SNAPSHOT.jar
+web: java -Dserver.port=$PORT $JAVA_OPTS -war target/discoveryserver-0.0.1-SNAPSHOT.war
