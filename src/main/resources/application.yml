@@ -1,16 +1,28 @@
+#spring:
+#  application:
+#    name: SVC-DISCOVERY
+#server:
+#  port: 8761
+#eureka:
+#  client:
+#    registerWithEureka: false
+#    fetchRegistry: false
+#    healthcheck: enabled
+#    serviceUrl:
+#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+#  instance:
+#    hostname: fnp-svc-discovery-server-8c7614af535c.herokuapp.com
 spring:
   application:
     name: SVC-DISCOVERY
-#server:
-#  port: 8761
+server:
+  port: ${PORT:5000}
 eureka:
+  instance:
+    hostname: localhost
   client:
     registerWithEureka: false
     fetchRegistry: false
-    healthcheck: enabled
     serviceUrl:
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
-  instance:
-    hostname: fnp-svc-discovery-server-8c7614af535c.herokuapp.com
-
 
