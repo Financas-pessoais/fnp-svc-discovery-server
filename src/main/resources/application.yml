@@ -1,8 +1,8 @@
 spring:
   application:
     name: SVC-DISCOVERY
-server:
-  port: 8761
+#server:
+#  port: 8761
 eureka:
   client:
     registerWithEureka: false
