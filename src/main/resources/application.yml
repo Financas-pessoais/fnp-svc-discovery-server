@@ -17,8 +17,8 @@ spring:
     name: SVC-DISCOVERY
   security:
     user:
-      name: ${EUREKA_ACCESS_USERNAME}
-      password: ${EUREKA_ACCESS_PASSWORD}
+      name: admin
+      password: 762
 server:
   port: 8761
 eureka:
