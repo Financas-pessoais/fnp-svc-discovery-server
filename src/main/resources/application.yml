@@ -11,6 +11,6 @@ eureka:
     serviceUrl:
       defaultZone: https://fnp-svc-discovery-server-8c7614af535c.herokuapp.com/eureka/
   instance:
-    hostname: https://fnp-svc-discovery-server-8c7614af535c.herokuapp.com
+    hostname: fnp-svc-discovery-server-8c7614af535c.herokuapp.com
 
 
