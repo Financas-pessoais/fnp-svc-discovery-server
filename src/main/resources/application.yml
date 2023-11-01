@@ -15,8 +15,12 @@
 spring:
   application:
     name: SVC-DISCOVERY
+  security:
+    user:
+      name: ${EUREKA_ACCESS_USERNAME}
+      password: ${EUREKA_ACCESS_PASSWORD}
 server:
-  port: 5000
+  port: 8761
 eureka:
   instance:
     hostname: localhost
