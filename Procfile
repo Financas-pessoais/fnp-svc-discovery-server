@@ -1,1 +1,1 @@
-web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/discoveryserver-1.0.jar
+web: java -Dserver.port=$PORT $JAVA_OPTS -jar target/svc-discovery-1.0.jar
