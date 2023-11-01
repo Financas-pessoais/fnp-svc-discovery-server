@@ -1,10 +1,8 @@
 spring:
   application:
-    name: FNP-SVC-DISCOVERY
-server:
-  port: 8761
-eureka:
-  client:
-    fetch-register: false
-    register-with-eureka: false
-    healthcheck: enabled
+    name: SVC-DISCOVERY
+  config:
+    import: configserver:${URL_CONFIG_SERVER}
+  cloud:
+    config:
+      profile: ${ACTIVE_PROFILE}
