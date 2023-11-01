@@ -16,13 +16,16 @@ spring:
   application:
     name: SVC-DISCOVERY
 server:
-  port: ${PORT:5000}
+  port: 5000
 eureka:
   instance:
     hostname: localhost
   client:
+    fetch-register: false
+    register-with-eureka: false
     registerWithEureka: false
     fetchRegistry: false
+    healthcheck: enabled
     serviceUrl:
-      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
+      defaultZone: http://localhost:5000/eureka/
 
