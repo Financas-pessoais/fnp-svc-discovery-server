@@ -1,8 +1,50 @@
+#spring:
+#  application:
+#    name: SVC-DISCOVERY
+#  config:
+#    import: configserver:${URL_CONFIG_SERVER}
+#  cloud:
+#    config:
+#      profile: ${ACTIVE_PROFILE}
+
+#server:
+#  port: 7070
+
+# CONFIGURAÇÕES GATEWAY
 spring:
   application:
     name: SVC-DISCOVERY
-  config:
-    import: configserver:${URL_CONFIG_SERVER}
   cloud:
-    config:
-      profile: ${ACTIVE_PROFILE}
+    gateway:
+      actuator:
+        verbose:
+          enabled: true
+      metrics:
+        enabled: true
+    discovery:
+      enabled: true
+
+# CONFIGURAÇÕES EUREKA
+eureka:
+  client:
+    fetch-register: true
+    register-with-eureka: true
+    defaultZone: https://fnp-svc-discovery-server-8c7614af535c.herokuapp.com/eureka
+  serviceUrl:
+    defaultZone: https://fnp-svc-discovery-server-8c7614af535c.herokuapp.com/eureka
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+
+# CONFIGURAÇÕES ACTUATOR
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+          - '*'
+          - 'gateway'
+  endpoint:
+    gateway:
+      enabled:
+        true
