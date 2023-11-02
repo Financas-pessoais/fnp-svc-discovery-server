@@ -8,8 +8,6 @@ spring:
 server:
   port: 8761
 eureka:
-  instance:
-    hostname: localhost
   client:
     fetch-registry: false
     register-with-eureka: false
@@ -18,5 +16,5 @@ eureka:
     healthcheck: enabled
     serviceUrl:
       defaultZone: ${EUREKA_PROTOCOL}://${EUREKA_URL}/eureka/
-    instance:
-      hostname: ${EUREKA_URL}
+  instance:
+    hostname: ${EUREKA_URL}
