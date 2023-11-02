@@ -1,15 +1,3 @@
-#spring:
-#  application:
-#    name: SVC-DISCOVERY
-#server:
-#  port: 8761
-#eureka:
-#  client:
-#    registerWithEureka: false
-#    fetchRegistry: false
-#    healthcheck: enabled
-#    serviceUrl:
-#      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 #  instance:
 #    hostname: fnp-svc-discovery-server-8c7614af535c.herokuapp.com
 spring:
@@ -17,19 +5,20 @@ spring:
     name: SVC-DISCOVERY
   security:
     user:
-      name: username
-      password: password
+      name: ${EUREKA_USERNAME}
+      password: ${EUREKA_PASSWORD}
 server:
   port: 8761
 eureka:
   instance:
     hostname: localhost
   client:
-    fetch-register: false
+    fetch-registry: false
     register-with-eureka: false
     registerWithEureka: false
     fetchRegistry: false
     healthcheck: enabled
+#    serviceUrl:
+#      defaultZone: https://fnp-svc-discovery-server-8c7614af535c.herokuapp.com/eureka/
     serviceUrl:
-      defaultZone: https://username:password@fnp-svc-discovery-server-8c7614af535c.herokuapp.com/eureka/
-
+      defaultZone: ${EUREKA_PROTOCOL}://${EUREKA_URL}/eureka/
