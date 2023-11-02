@@ -1,5 +1,3 @@
-#  instance:
-#    hostname: fnp-svc-discovery-server-8c7614af535c.herokuapp.com
 spring:
   application:
     name: SVC-DISCOVERY
@@ -18,7 +16,7 @@ eureka:
     registerWithEureka: false
     fetchRegistry: false
     healthcheck: enabled
-#    serviceUrl:
-#      defaultZone: https://fnp-svc-discovery-server-8c7614af535c.herokuapp.com/eureka/
     serviceUrl:
       defaultZone: ${EUREKA_PROTOCOL}://${EUREKA_URL}/eureka/
+    instance:
+      hostname: ${EUREKA_URL}
