@@ -1,20 +1,8 @@
 spring:
   application:
     name: SVC-DISCOVERY
-  security:
-    user:
-      name: ${EUREKA_USERNAME}
-      password: ${EUREKA_PASSWORD}
-server:
-  port: 8761
-eureka:
-  client:
-    fetch-registry: false
-    register-with-eureka: false
-    registerWithEureka: false
-    fetchRegistry: false
-    healthcheck: enabled
-    serviceUrl:
-      defaultZone: ${EUREKA_PROTOCOL}://${EUREKA_URL}/eureka/
-  instance:
-    hostname: ${EUREKA_URL}
+  config:
+    import: configserver:${URL_CONFIG_SERVER}
+  cloud:
+    config:
+      profile: ${ACTIVE_PROFILE}
