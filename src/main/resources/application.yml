@@ -3,6 +3,6 @@ spring:
     name: SVC-DISCOVERY
   config:
     import: configserver:${URL_CONFIG_SERVER}
-  cloud:
-    config:
-      profile: ${ACTIVE_PROFILE}
+#  cloud:
+#    config:
+#      profile: ${ACTIVE_PROFILE}
