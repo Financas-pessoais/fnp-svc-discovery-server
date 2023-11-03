@@ -2,7 +2,13 @@ spring:
   application:
     name: SVC-DISCOVERY
   config:
+    uri: ${URL_CONFIG_SERVER}
     import: configserver:${URL_CONFIG_SERVER}
-#  cloud:
-#    config:
-#      profile: ${ACTIVE_PROFILE}
+  cloud:
+    config:
+      profile: ${ACTIVE_PROFILE}
+      tls:
+        enabled: false
+management:
+  security:
+    enabled: false
