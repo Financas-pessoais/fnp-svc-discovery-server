@@ -32,8 +32,8 @@ eureka:
     healthcheck: enabled
     serviceUrl:
       defaultZone: ${EUREKA_PROTOCOL}://${EUREKA_URL}/eureka/
-  instance:
-    hostname: ${EUREKA_URL}
+#  instance:
+#    hostname: ${EUREKA_URL}
 
 # CONFIGURAÇÕES ACTUATOR
 management:
